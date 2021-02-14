@@ -28,9 +28,9 @@ class Servo:
         if isinstance(pin, int):
             pin = Pin(pin, Pin.OUT)
         if isinstance(pin, Pin):
-            self.pwm = PWM(pin)
+            self.__pwm = PWM(pin)
         if isinstance(pin, PWM):
-            self.pwm = pin
+            self.__pwm = pin
         self.__pwm.freq(50)
         self.minVal = minVal
         self.maxVal = maxVal
